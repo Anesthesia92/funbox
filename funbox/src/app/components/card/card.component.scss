@@ -3,9 +3,12 @@ $blue: #2EA8E6;
 
 .cards {
   display: flex;
-  width: 1020px;
+  width: 1120px;
   margin: 0 auto;
   justify-content: space-between;
+  flex-wrap: wrap;
+  height: 100%;
+  overflow: hidden;
 }
 
 .card {
@@ -14,10 +17,10 @@ $blue: #2EA8E6;
   flex-direction: column;
   font-family: $font;
   &-block {
-    width: 314px;
+    width: 312px;
     height: 480px;
     background-color: white;
-    clip-path: polygon(14% 0%, 100% 0%, 100% 100%, 0 100%, 0 9.5%);
+    clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0 100%, 0 10%);
     background-image:  url(../../../assets/img/cat.png);
     background-repeat: no-repeat;
     background-position: bottom;
@@ -27,6 +30,7 @@ $blue: #2EA8E6;
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
     p, h1, h2 {
       width: 205px;
       margin-left: 48px;
@@ -117,18 +121,28 @@ $blue: #2EA8E6;
 .food-end {
   color: #FFFF66;
 }
-
-mat-checkbox {
-  position: absolute;
-  opacity: 0;
-  width: 500px;
-  height: 500px;
-}
+//
+//mat-checkbox {
+//  position: absolute;
+//  opacity: 0;
+//  width: 500px;
+//  height: 500px;
+//}
 .card-block:before {
-  border-right: 0 solid #fff;
-  width: 44px;
-  height: 44px;
+  width: 45px;
+  height: 45px;
   content: "";
   position: absolute;
-  background-color: linear-gradient(-45deg, transparent 32px, #2EA8E6 0);
+  background: linear-gradient(-45deg, transparent 32px, #2EA8E6 6px);
+}
+
+@media (max-width: 1120px) {
+.cards {
+  max-width: 1120px;
+  width: 100%;
+  height: 100%;
+  justify-content: space-evenly;
+  margin-top: 104px;
+  margin-bottom: 10px;
+}
 }
