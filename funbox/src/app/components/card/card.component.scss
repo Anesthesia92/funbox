@@ -40,6 +40,9 @@ $blue: #2EA8E6;
       color: #666666;
       font-weight: 400;
       margin-bottom: 0;
+      span {
+        margin-left: 2px;
+      }
     }
     h1 {
       margin-top: 5px;
@@ -95,9 +98,7 @@ $blue: #2EA8E6;
       .oval-kg {
         font-size: 21px;
         margin-top: 8px;
-      }
-    }
-  }
+      } } }
 }
 
 .card-text {
@@ -145,4 +146,21 @@ $blue: #2EA8E6;
   margin-top: 104px;
   margin-bottom: 10px;
 }
+}
+
+.example-full-width {
+  width: 100%;
+  font-family: $font;
+}
+
+.input-food {
+  border: solid 1px white;
+  font-family: $font;
+  cursor: pointer;
+  color: #666666;
+  padding: 0;
+}
+.mat-option {
+  font-family: $font;
+  color: #666666;
 }

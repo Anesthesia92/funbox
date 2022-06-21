@@ -7,6 +7,7 @@ import { MainComponent } from './components/main/main.component';
 import { CardComponent } from './components/card/card.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
 @NgModule({
   declarations: [
@@ -14,12 +15,13 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     MainComponent,
     CardComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    MatCheckboxModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        MatCheckboxModule,
+        MatAutocompleteModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

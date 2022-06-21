@@ -1,10 +1,3 @@
-<!--<section class="example-section" [formGroup]="toppings">-->
-<!--  <h4>Select your toppings:</h4>-->
-<!--  <p><mat-checkbox>Pepperoni</mat-checkbox></p>-->
-<!--  <p><mat-checkbox>Extra Cheese</mat-checkbox></p>-->
-<!--  <p><mat-checkbox>Mushroom</mat-checkbox></p>-->
-<!--</section>-->
-
 <div class="cards" [formGroup]="toppings">
   <div class="card">
     <mat-checkbox class="checkbox">
@@ -13,7 +6,16 @@
   <p class="card-block__food">Сказочное заморское яство</p>
   <h1>Нямушка</h1>
   <h2>с фуа-гра</h2>
-  <p class="card-block__portions">10 порций <br>мышь в подарок</p>
+  <p class="card-block__portions">
+    <input type="text" class="input-food" value="40 порций"
+           placeholder="10 порций"
+           [formControl]="control"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let num of filteredFood | async" [value]="num">
+        {{num}}
+      </mat-option>
+    </mat-autocomplete><br><span>мышь в подарок</span></p>
   <div class="oval"><p class="oval-m">0,5</p><p class="oval-kg">кг</p></div>
 </div>
     <p class="card-text">
@@ -27,7 +29,16 @@
       <p class="card-block__food">Сказочное заморское яство</p>
       <h1>Нямушка</h1>
       <h2>с рыбой</h2>
-      <p class="card-block__portions">10 порций <br>2 мыши в подарок</p>
+      <p class="card-block__portions">
+        <input type="text" class="input-food" value="40 порций"
+                                                 placeholder="40 порций"
+                                                 [formControl]="control2"
+                                                 [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let num of filteredFood | async" [value]="num">
+            {{num}}
+          </mat-option>
+        </mat-autocomplete><br><span>2 мыши в подарок</span></p>
       <div class="oval"><p class="oval-m">2</p><p class="oval-kg">кг</p></div>
       </div>
     <p class="card-text">
@@ -41,7 +52,18 @@
       <p class="card-block__food">Сказочное заморское яство</p>
       <h1>Нямушка</h1>
       <h2>с курой</h2>
-      <p class="card-block__portions">100 порций <br>5 мышей в подарок <br>заказчик доволен</p>
+      <p class="card-block__portions">
+        <input type="text" class="input-food" value="100 порций"
+               placeholder="100 порций"
+               [formControl]="control3"
+               [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let num of filteredFood | async" [value]="num">
+            {{num}}
+          </mat-option>
+        </mat-autocomplete>
+        <br><span>5 мышей в подарок</span>
+        <br><span>заказчик доволен</span></p>
       <div class="oval"><p class="oval-m">5</p><p class="oval-kg">кг</p></div>
     </div>
     <p class="card-text food-end">
