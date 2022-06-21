@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {FormBuilder, FormControl} from "@angular/forms";
 import {map, Observable, startWith} from 'rxjs';
 
@@ -9,19 +9,19 @@ import {map, Observable, startWith} from 'rxjs';
 })
 export class CardComponent {
 
-  toppings = this._formBuilder.group({
-    pepperoni: false,
-    extracheese: false,
-    mushroom: false,
-  });
+  checked: boolean = false;
+  disabled: boolean = false;
+  selected: boolean = true;
+  used: boolean = false;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder) {
+  }
+
   control = new FormControl('');
   control2 = new FormControl('');
   control3 = new FormControl('');
   num: string[] = ['10 порций', '40 порций', '100 порций'];
   filteredFood: Observable<string[]> | undefined;
-
 
   ngOnInit() {
     this.filteredFood = this.control.valueChanges.pipe(
@@ -45,5 +45,19 @@ export class CardComponent {
 
   public _normalizeValue(value: string): string {
     return value.toLowerCase().replace(/\s/g, '');
+  }
+
+  onCheckedItem() {
+    this.checked = !this.checked
+  }
+  onCheckedItemTwo() {
+    this.selected = !this.selected
+  }
+  onCheckedItemThree() {
+    this.used = !this.used
+  }
+
+  onCheckedDisabled() {
+    this.disabled = !this.disabled
   }
 }

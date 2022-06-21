@@ -1,55 +1,67 @@
-<div class="cards" [formGroup]="toppings">
-  <div class="card">
-    <mat-checkbox class="checkbox">
-    </mat-checkbox>
-<div class="card-block" formControlName="pepperoni">
-  <p class="card-block__food">Сказочное заморское яство</p>
-  <h1>Нямушка</h1>
-  <h2>с фуа-гра</h2>
-  <p class="card-block__portions">
-    <input type="text" class="input-food" value="40 порций"
-           placeholder="10 порций"
-           [formControl]="control"
-           [matAutocomplete]="auto">
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let num of filteredFood | async" [value]="num">
-        {{num}}
-      </mat-option>
-    </mat-autocomplete><br><span>мышь в подарок</span></p>
-  <div class="oval"><p class="oval-m">0,5</p><p class="oval-kg">кг</p></div>
-</div>
-    <p class="card-text">
-      Чего сидишь? Порадуй котэ, <a class="card-text__link" formControlName="pepperoni">купи</a><a>.</a>
-    </p>
-  </div>
-  <div class="card">
-    <mat-checkbox class="checkbox">
-    </mat-checkbox>
-    <div class="card-block" formControlName="extracheese">
-      <p class="card-block__food">Сказочное заморское яство</p>
+<div class="cards">
+  <div class="card" [ngClass]="{ invisible: checked, disabled: checked }" (click)="onCheckedDisabled()">
+    <div class="card-block" (click)="onCheckedItem()">
+      <p class="card-block__food blue">Сказочное заморское яство</p>
+      <p class="card-block__food pink">Котэ не одобряет?</p>
       <h1>Нямушка</h1>
-      <h2>с рыбой</h2>
+      <h2>с фуа-гра</h2>
       <p class="card-block__portions">
         <input type="text" class="input-food" value="40 порций"
-                                                 placeholder="40 порций"
-                                                 [formControl]="control2"
-                                                 [matAutocomplete]="auto">
+               placeholder="10 порций"
+               [formControl]="control"
+               [matAutocomplete]="auto">
         <mat-autocomplete #auto="matAutocomplete">
           <mat-option *ngFor="let num of filteredFood | async" [value]="num">
             {{num}}
           </mat-option>
-        </mat-autocomplete><br><span>2 мыши в подарок</span></p>
-      <div class="oval"><p class="oval-m">2</p><p class="oval-kg">кг</p></div>
-      </div>
-    <p class="card-text">
-      Чего сидишь? Порадуй котэ, <a class="card-text__link">купи</a><a>.</a>
+        </mat-autocomplete>
+        <br><span>мышь в подарок</span></p>
+      <div class="oval blue"><p class="oval-m">0,5</p>
+        <p class="oval-kg">кг</p></div>
+    <div class="oval pink"><p class="oval-m">0,5</p>
+      <p class="oval-kg">кг</p></div>
+    </div>
+    <p class="card-text blue">
+      Чего сидишь? Порадуй котэ, <a class="card-text__link"
+                                    (click)="onCheckedItem()">купи</a><a>.</a>
+    </p>
+    <p class="card-text pink">
+      Печень утки разварная с артишоками.
     </p>
   </div>
-  <div class="card">
-    <mat-checkbox class="checkbox">
-    </mat-checkbox>
-    <div class="card-block" formControlName="mushroom">
-      <p class="card-block__food">Сказочное заморское яство</p>
+  <div class="card" [ngClass]="{ invisible: selected, disabled: false }">
+    <div class="card-block" (click)="onCheckedItemTwo()">
+      <p class="card-block__food blue">Сказочное заморское яство</p>
+      <p class="card-block__food pink">Котэ не одобряет?</p>
+      <h1>Нямушка</h1>
+      <h2>с рыбой</h2>
+      <p class="card-block__portions">
+        <input type="text" class="input-food" value="нажмите для выбора"
+               placeholder="нажмите для выбора"
+               [formControl]="control2"
+               [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let num of filteredFood | async" [value]="num">
+            {{num}}
+          </mat-option>
+        </mat-autocomplete>
+        <br><span>2 мыши в подарок</span></p>
+      <div class="oval pink"><p class="oval-m">2</p>
+        <p class="oval-kg">кг</p></div>
+      <div class="oval blue"><p class="oval-m">2</p>
+        <p class="oval-kg">кг</p></div>
+    </div>
+    <p class="card-text blue">
+      Чего сидишь? Порадуй котэ, <a class="card-text__link" (click)="onCheckedItemTwo()"> купи</a><a>.</a>
+    </p>
+    <p class="card-text pink">
+      Головы щучьи с чесноком да свежайшая сёмгушка.
+    </p>
+  </div>
+  <div class="card" [ngClass]="{ invisible: used, disabled: false}">
+    <div class="card-block" (click)="onCheckedItemThree()">
+      <p class="card-block__food blue">Сказочное заморское яство</p>
+      <p class="card-block__food pink">Котэ не одобряет?</p>
       <h1>Нямушка</h1>
       <h2>с курой</h2>
       <p class="card-block__portions">
@@ -64,10 +76,19 @@
         </mat-autocomplete>
         <br><span>5 мышей в подарок</span>
         <br><span>заказчик доволен</span></p>
-      <div class="oval"><p class="oval-m">5</p><p class="oval-kg">кг</p></div>
+      <div class="oval blue"><p class="oval-m">5</p>
+        <p class="oval-kg">кг</p></div>
+      <div class="oval pink"><p class="oval-m">5</p>
+        <p class="oval-kg">кг</p></div>
     </div>
-    <p class="card-text food-end">
-   Печалька, с курой закончился
+    <p class="card-text blue">
+      Чего сидишь? Порадуй котэ, <a class="card-text__link" (click)="onCheckedItemThree()"> купи</a><a>.</a>
+    </p>
+    <!--    <p class="card-text food-end" (change)="onCheckedItem()">-->
+    <!--   Печалька, с курой закончился-->
+    <!--    </p>-->
+    <p class="card-text pink">
+      Филе из цыплят с трюфелями в бульоне.
     </p>
   </div>
 </div>
