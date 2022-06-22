@@ -17,12 +17,13 @@ $pink: #E62E7A;
   display: flex;
   flex-direction: column;
   font-family: $font;
+
   &-block {
     width: 312px;
     height: 480px;
     background-color: white;
     clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0 100%, 0 10%);
-    background-image:  url(../../../assets/img/cat.png);
+    background-image: url(../../../assets/img/cat.png);
     background-repeat: no-repeat;
     background-position: bottom;
     border: 4px solid $blue;
@@ -32,19 +33,23 @@ $pink: #E62E7A;
     position: relative;
     overflow: hidden;
     cursor: pointer;
+
     p, h1, h2 {
       width: 205px;
       margin-left: 48px;
       font-family: $font;
     }
+
     p {
       color: #666666;
       font-weight: 400;
       margin-bottom: 0;
+
       span {
         margin-left: 2px;
       }
     }
+
     h1 {
       margin-top: 5px;
       margin-bottom: 0;
@@ -53,6 +58,7 @@ $pink: #E62E7A;
       font-style: normal;
       font-weight: 700;
     }
+
     h2 {
       margin-bottom: 0;
       margin-top: 0;
@@ -60,17 +66,20 @@ $pink: #E62E7A;
       line-height: 28px;
       font-weight: 700;
     }
+
     &__food {
       font-size: 16px;
       line-height: 19px;
       margin-top: 17px;
     }
+
     &__portions {
       font-weight: 700;
       font-size: 14px;
       line-height: 16px;
       margin-top: 15px;
     }
+
     .oval {
       width: 80px;
       height: 80px;
@@ -85,6 +94,7 @@ $pink: #E62E7A;
       justify-content: center;
       align-items: center;
       font-family: $font;
+
       p {
         width: 80px;
         font-weight: 400;
@@ -96,10 +106,13 @@ $pink: #E62E7A;
         text-align: center;
         margin: 12px 0 0;
       }
+
       .oval-kg {
         font-size: 21px;
         margin-top: 8px;
-      } } }
+      }
+    }
+  }
 }
 
 .card-text {
@@ -110,9 +123,11 @@ $pink: #E62E7A;
   text-align: center;
   margin-top: 14px;
   margin-bottom: 0;
+
   &__link {
     border-bottom: 2.5px dotted;
   }
+
   a {
     color: $blue;
     text-decoration: none;
@@ -126,6 +141,7 @@ $pink: #E62E7A;
   height: 300px;
   opacity: 0;
 }
+
 .card-block:before {
   width: 45px;
   height: 45px;
@@ -135,17 +151,17 @@ $pink: #E62E7A;
 }
 
 @media (max-width: 1120px) {
-.cards {
-  max-width: 1120px;
-  width: 100%;
-  height: 100%;
-  justify-content: space-evenly;
-  margin-top: 104px;
-  margin-bottom: 10px;
-}
-.card {
-  margin-top: 10px;
-}
+  .cards {
+    max-width: 1120px;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    margin-top: 104px;
+    margin-bottom: 10px;
+  }
+  .card {
+    margin-top: 10px;
+  }
 }
 
 .example-full-width {
@@ -160,6 +176,7 @@ $pink: #E62E7A;
   color: #666666;
   padding: 0;
 }
+
 .mat-option {
   font-family: $font;
   color: #666666;
@@ -170,9 +187,11 @@ $pink: #E62E7A;
     display: flex;
     justify-content: center;
   }
+
   .pink {
     display: none;
   }
+
   .disabled {
     display: none;
   }
@@ -182,19 +201,24 @@ $pink: #E62E7A;
   .blue, {
     display: none;
   }
+
   .pink, {
     display: flex;
     justify-content: center;
   }
+
   .card-block__food.pink {
     color: $pink;
   }
+
   .card-block {
     border: 4px solid $pink;
   }
+
   .card-block:before {
     background: linear-gradient(-45deg, transparent 32px, $pink 1px);
   }
+
   .oval.pink, {
     background-color: $pink;
   }
@@ -205,22 +229,27 @@ $pink: #E62E7A;
   .card-block__food {
     color: grey;
   }
+
   .card-block__food.pink {
     display: none;
   }
+
   .card-block__food.blue {
     display: flex;
     opacity: 0.3;
   }
+
   .card-block__portions {
     opacity: 0.3;
     color: #B3B3B3;
   }
+
   .card-block {
     border: 4px solid grey;
     background-color: #F2F2F2;
     color: #B3B3B3;
   }
+
   .card-block:after {
     background: #F2F2F2;
     content: '';
@@ -232,29 +261,36 @@ $pink: #E62E7A;
     z-index: 2;
     opacity: 0.6;
   }
+
   .input-food {
     background-color: #F2F2F2;
-    border: 1px solid  #F2F2F2;
+    border: 1px solid #F2F2F2;
     opacity: 0.5;
   }
+
   h1, h2 {
     opacity: 0.3;
     color: #B3B3B3;
   }
+
   .card-block:before {
     background: linear-gradient(-45deg, transparent 32px, grey 1px);
   }
+
   .oval, {
     background-color: grey;
     opacity: 1;
   }
+
   .disabled {
     display: block;
     color: #FFFF66;
   }
+
   .card-text.blue {
     display: none;
   }
+
   .card-text.pink, {
     display: none;
   }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormControl} from "@angular/forms";
 import {map, Observable, startWith} from 'rxjs';
 
@@ -52,9 +52,11 @@ export class CardComponent {
   onCheckedItem(): void {
     this.checked = !this.checked
   }
-  onCheckedItemTwo() :void {
+
+  onCheckedItemTwo(): void {
     this.selected = !this.selected
   }
+
   onCheckedItemThree(): void {
     this.used = !this.used
   }
@@ -62,6 +64,7 @@ export class CardComponent {
   onCheckedDisabled(): void {
     this.disabled = !this.disabled
   }
+
   onCheckedDisabledItems(): void {
     this.unmute = !this.unmute
   }

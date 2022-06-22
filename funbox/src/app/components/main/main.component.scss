@@ -9,6 +9,7 @@
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
+
   &-text {
     margin: auto 0;
     top: 13%;
@@ -22,18 +23,21 @@
     color: #FFFFFF;
     text-shadow: 0 1px 1px #000000;
   }
+
   app-card {
     position: relative;
   }
 }
-@media (max-width: 1020px){
-.main {
-  height: auto;
-  &-text {
-    font-size: 24px;
-    line-height: 25px;
-    top: 7%;
+
+@media (max-width: 1020px) {
+  .main {
+    height: auto;
+
+    &-text {
+      font-size: 24px;
+      line-height: 25px;
+      top: 7%;
+    }
   }
-}
 
 }
