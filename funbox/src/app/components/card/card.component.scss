@@ -173,6 +173,9 @@ $pink: #E62E7A;
   .pink {
     display: none;
   }
+  .disabled {
+    display: none;
+  }
 }
 
 .card.invisible {
@@ -195,19 +198,65 @@ $pink: #E62E7A;
   .oval.pink, {
     background-color: $pink;
   }
+
 }
 
-//.card.disabled {
-//  .card-block__food {
-//    color: grey;
-//  }
-//  .card-block {
-//    border: 4px solid grey;
-//  }
-//  .card-block:before {
-//    background: linear-gradient(-45deg, transparent 32px, $pink 1px);
-//  }
-//  .oval, {
-//    background-color: grey;
-//  }
-//}
+.card.disabled, .card.invisible.disabled {
+  .card-block__food {
+    color: grey;
+  }
+  .card-block__food.pink {
+    display: none;
+  }
+  .card-block__food.blue {
+    display: flex;
+    opacity: 0.3;
+  }
+  .card-block__portions {
+    opacity: 0.3;
+    color: #B3B3B3;
+  }
+  .card-block {
+    border: 4px solid grey;
+    background-color: #F2F2F2;
+    color: #B3B3B3;
+  }
+  .card-block:after {
+    background: #F2F2F2;
+    content: '';
+    position: absolute;
+    top: 189px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    opacity: 0.6;
+  }
+  .input-food {
+    background-color: #F2F2F2;
+    border: 1px solid  #F2F2F2;
+    opacity: 0.5;
+  }
+  h1, h2 {
+    opacity: 0.3;
+    color: #B3B3B3;
+  }
+  .card-block:before {
+    background: linear-gradient(-45deg, transparent 32px, grey 1px);
+  }
+  .oval, {
+    background-color: grey;
+    opacity: 1;
+  }
+  .disabled {
+    display: block;
+    color: #FFFF66;
+  }
+  .card-text.blue {
+    display: none;
+  }
+  .card-text.pink, {
+    display: none;
+  }
+
+}

@@ -13,6 +13,8 @@ export class CardComponent {
   disabled: boolean = false;
   selected: boolean = true;
   used: boolean = false;
+  unmute: boolean = false;
+  off: boolean = true;
 
   constructor(private _formBuilder: FormBuilder) {
   }
@@ -47,17 +49,24 @@ export class CardComponent {
     return value.toLowerCase().replace(/\s/g, '');
   }
 
-  onCheckedItem() {
+  onCheckedItem(): void {
     this.checked = !this.checked
   }
-  onCheckedItemTwo() {
+  onCheckedItemTwo() :void {
     this.selected = !this.selected
   }
-  onCheckedItemThree() {
+  onCheckedItemThree(): void {
     this.used = !this.used
   }
 
-  onCheckedDisabled() {
+  onCheckedDisabled(): void {
     this.disabled = !this.disabled
+  }
+  onCheckedDisabledItems(): void {
+    this.unmute = !this.unmute
+  }
+
+  onUnCheckedDisabled() {
+    this.off = !this.off
   }
 }

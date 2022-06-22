@@ -1,11 +1,11 @@
 <div class="cards">
-  <div class="card" [ngClass]="{ invisible: checked, disabled: checked }" (click)="onCheckedDisabled()">
-    <div class="card-block" (click)="onCheckedItem()">
+  <div class="card" [ngClass]="{ invisible: checked, disabled: disabled}">
+    <div class="card-block" (click)="onCheckedItem()" >
       <p class="card-block__food blue">Сказочное заморское яство</p>
       <p class="card-block__food pink">Котэ не одобряет?</p>
       <h1>Нямушка</h1>
       <h2>с фуа-гра</h2>
-      <p class="card-block__portions">
+      <p class="card-block__portions" (click)="onCheckedDisabled()">
         <input type="text" class="input-food" value="40 порций"
                placeholder="10 порций"
                [formControl]="control"
@@ -28,14 +28,17 @@
     <p class="card-text pink">
       Печень утки разварная с артишоками.
     </p>
+    <p class="card-text disabled">
+      Печалька, с курой закончился
+    </p>
   </div>
-  <div class="card" [ngClass]="{ invisible: selected, disabled: false }">
+  <div class="card" [ngClass]="{ invisible: selected, disabled: unmute }">
     <div class="card-block" (click)="onCheckedItemTwo()">
       <p class="card-block__food blue">Сказочное заморское яство</p>
       <p class="card-block__food pink">Котэ не одобряет?</p>
       <h1>Нямушка</h1>
       <h2>с рыбой</h2>
-      <p class="card-block__portions">
+      <p class="card-block__portions" (click)="onCheckedDisabledItems()">
         <input type="text" class="input-food" value="нажмите для выбора"
                placeholder="нажмите для выбора"
                [formControl]="control2"
@@ -57,14 +60,17 @@
     <p class="card-text pink">
       Головы щучьи с чесноком да свежайшая сёмгушка.
     </p>
+    <p class="card-text disabled">
+      Печалька, с курой закончился
+    </p>
   </div>
-  <div class="card" [ngClass]="{ invisible: used, disabled: false}">
+  <div class="card" [ngClass]="{ invisible: used, disabled: off}">
     <div class="card-block" (click)="onCheckedItemThree()">
       <p class="card-block__food blue">Сказочное заморское яство</p>
       <p class="card-block__food pink">Котэ не одобряет?</p>
       <h1>Нямушка</h1>
       <h2>с курой</h2>
-      <p class="card-block__portions">
+      <p class="card-block__portions" (click)="onUnCheckedDisabled()">
         <input type="text" class="input-food" value="100 порций"
                placeholder="100 порций"
                [formControl]="control3"
@@ -84,9 +90,9 @@
     <p class="card-text blue">
       Чего сидишь? Порадуй котэ, <a class="card-text__link" (click)="onCheckedItemThree()"> купи</a><a>.</a>
     </p>
-    <!--    <p class="card-text food-end" (change)="onCheckedItem()">-->
-    <!--   Печалька, с курой закончился-->
-    <!--    </p>-->
+        <p class="card-text disabled">
+       Печалька, с курой закончился
+        </p>
     <p class="card-text pink">
       Филе из цыплят с трюфелями в бульоне.
     </p>
